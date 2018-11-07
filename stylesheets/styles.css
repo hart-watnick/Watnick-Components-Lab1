@@ -1,0 +1,12 @@
+.pic{
+    background-color: #1ECEFD;
+    
+}
+
+img {
+    display: flex;
+    align-self: center;
+    border-radius: 50%;
+    width: 30%;
+    height: 30%;
+}
