@@ -3,9 +3,9 @@
 function ProfileService($location) {
     const self= this;
     self.userInfo = {
-        name: "Snoopy",
-        contact: "snoopy@peanuts.com",
-        bio: "Best friends with Woodstock. Bark. Good Dog.",
+        name: "Hart",
+        contact: "hart@peanuts.com",
+        bio: "Rock the boat like a one-eyed pirate, Rick James I got glittah on my eyelids.",
     };  
 
     self.getUserInfo = () => {
