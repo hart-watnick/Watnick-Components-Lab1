@@ -9,6 +9,6 @@ angular
             })
             .when("/edit-profile", {
                 template: "<edit-profile></edit-profile>"
-            });
-
-    }])
+            })
+            .otherwise({ redirectTo: "/profile" })
+    }]);

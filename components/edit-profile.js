@@ -2,38 +2,25 @@
 
 const editProfile = {
     template: `
-    <section class= "edit-prof">
-        <form>
-            <h2>
-                Use the form below to update your profile
-            </h2>
-            <label>
-                Name
-            </label>
-            <input type= "text" ng-model="$ctrl.person.name">
-            <label>
-                Contact
-            </label>
-            <input type= "text" ng-model="$ctrl.person.contact">
-            <label>
-                Bio
-            </label>
-            <input type = "text" ng-model="$ctrl.person.bio">
-
-            <button class= "update-btn" ng-click="$ctrl.passData($ctrl.person);">Update</button>
-        </form>
-
-    </section>
+    <form ng-submit = "$ctrl.saveProfile($ctrl.userInfo);">
+        <input type = "text" ng-model = "$ctrl.userInfo.name">
+        <input type = "text" ng-model = "$ctrl.userInfo.contact">
+        <input type = "text" ng-model = "$ctrl.userInfo.bio">
+        <button>Save</button>
+    </form>
+    
     `,
     controller: ["ProfileService", function(ProfileService) {
         const vm = this;
-        vm.passData = (profile) => {
-            ProfileService.setUserProfile(profile);
+        vm.userInfo = angular.copy(ProfileService.getUserInfo());
+        console.log(vm.userInfo);
+        vm.saveProfile = (newUserInfo) => {
+            ProfileService.setUserInfo(newUserInfo);
         };
     }]
-}
 
+};
 
-angular
+angular 
     .module("App")
-    .component("editProfile", editProfile);
+    .component ("editProfile", editProfile);
